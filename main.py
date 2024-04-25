@@ -1,4 +1,5 @@
 from sph import sph
+from bruteforce import discrete_log
 from time import time
 
 a = int(input('a:')) #44
@@ -10,5 +11,13 @@ p = sph(a,b,n)
 end = time()
 
 print("[*] SPH found the power:")
+print("     x =",p)
+print("     time:", end-start)
+
+start = time()
+p = discrete_log(a,b,n)
+end = time()
+
+print("[*] Bruteforce found the power:")
 print("     x =",p)
 print("     time:", end-start)
